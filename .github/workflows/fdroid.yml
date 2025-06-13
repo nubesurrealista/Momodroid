@@ -1,11 +1,15 @@
 name: F-Droid Repo Index
 
 on:
+  push:
+    paths:
+      - 'repo/**'
   workflow_dispatch:
 
 jobs:
   fdroid-index:
     runs-on: ubuntu-latest
+
     steps:
       - name: Clona el repositorio
         uses: actions/checkout@v4
@@ -22,3 +26,16 @@ jobs:
 
       - name: Ejecuta fdroid update (índice F-Droid)
         run: fdroid update --create-metadata --verbose
+
+      - name: Prepara archivos para publicación
+        run: |
+          mkdir publish
+          cp -r repo publish/repo
+
+      - name: Publica en gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./publish
+          publish_branch: gh-pages
+          force_orphan: true
