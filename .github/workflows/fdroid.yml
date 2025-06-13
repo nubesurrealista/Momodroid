@@ -25,8 +25,7 @@ jobs:
         run: pip install fdroidserver
 
       - name: Build F-Droid repo index
-        run: |
-          fdroid update --create-metadata --verbose --repo repo
+        run: fdroid update --create-metadata --verbose
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
