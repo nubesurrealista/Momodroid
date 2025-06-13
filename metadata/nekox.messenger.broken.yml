@@ -18,7 +18,7 @@ Repo: https://github.com/nubesurrealista/Momodroid
 AutoUpdateMode: None
 UpdateCheckMode: None
 
-Icon: metadata/icon.png
+icon: metadata/icon.png
 
 Builds:
   - versionName: 11.12.0
