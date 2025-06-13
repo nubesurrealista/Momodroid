@@ -24,5 +24,3 @@ Builds:
     apk:
       - repo/Momo-v11.12.0-32817a2da8-arm64-v8a.apk
       - repo/Momo-v11.12.0-32817a2da8-armeabi-v7a.apk
-
-packagename: nekox.messenger.broken
