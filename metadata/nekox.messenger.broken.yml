@@ -21,6 +21,8 @@ UpdateCheckMode: None
 Builds:
   - versionName: 11.12.0
     versionCode: 32817
-    apk:
+    commit: bf9ed9da501e2ade78669bea00091daf362e54e2
+    prebuild: echo "Using prebuilt APKs"
+    output:
       - repo/Momo-v11.12.0-32817a2da8-arm64-v8a.apk
       - repo/Momo-v11.12.0-32817a2da8-armeabi-v7a.apk
