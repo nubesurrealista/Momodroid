@@ -1,34 +1,24 @@
-name: Build F-Droid Repo
+name: F-Droid Repo Index
 
 on:
-  push:
-    branches: [ main ]
-    paths:
-      - 'repo/**'
-      - 'metadata/**'
-      - '.github/workflows/fdroid.yml'
   workflow_dispatch:
 
 jobs:
-  build:
+  fdroid-index:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Clona el repositorio
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-
-      - name: Install fdroidserver
+      - name: Instala fdroidserver
         run: pip install fdroidserver
 
-      - name: Build F-Droid repo index
-        run: fdroid update --create-metadata --verbose
+      - name: Restaura keystore.p12 desde secret
+        run: echo "${{ secrets.KEYSTORE_P12_B64 }}" | base64 --decode > keystore.p12
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./repo
+      - name: Restaura config.yml desde secret
+        run: |
+          echo "${{ secrets.FDROID_CONFIG_YML }}" > config.yml
+
+      - name: Ejecuta fdroid update (índice F-Droid)
+        run: fdroid update --create-metadata --verbose
