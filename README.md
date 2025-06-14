@@ -59,3 +59,7 @@ All APKs are kept up-to-date with the latest upstream releases.
 This is an unofficial repository. APKs are sourced directly from the upstream Momogram releases. This project is not affiliated with F-Droid or the Momogram team.
 
 ---
+
+**Btw**: if you feel you have the disposition and experience to maintain this project, you can open an issue. Or, if you are someone from the Momogram team and you want to have control of this project, I will be happy to transfer ownership and contribute to the project moving forward. I'm just a noob and this is still a proof of concept.
+
+---
