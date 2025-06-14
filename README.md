@@ -15,7 +15,7 @@ Learn more on the [official Momogram GitHub page](https://github.com/dic1911/Mom
 ## About this F-Droid Custom Repository
 
 This repository provides up-to-date APKs of Momogram, including both stable and pre-release versions, directly from the upstream project.  
-It is intended for users who want the latest features and fixes, even before they may appear in the official F-Droid main repo.
+It is intended for users who want the latest features and fixes from its F-Droid client.
 
 **Features:**
 - Automatically syncs the latest Momogram APKs for multiple architectures (`arm64-v8a`, `armeabi-v7a`)
